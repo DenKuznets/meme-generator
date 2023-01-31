@@ -1,9 +1,14 @@
 import "./Meme.css";
 
 export default function Meme() {
+
+  function handleClick() {
+    console.log('click');
+  }
+
   return (
     <div className="container">
-      <form>
+      <div className="form">
         <div className="text-input-container">
           <input
             className="frase1"
@@ -18,8 +23,8 @@ export default function Meme() {
             placeholder="and take my money"
           />
         </div>
-        <input className="btn" type="button" value="Get a new meme image 🖼" />
-      </form>
+        <input onClick={handleClick} className="btn" type="button" value="Get a new meme image 🖼" />
+      </div>
     </div>
   );
 }
