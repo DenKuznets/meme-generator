@@ -72,3 +72,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* END OF RESETS */
+
+body {
+  font-size: 12px;
+  font-family: 'Karla', sans-serif;
+}
