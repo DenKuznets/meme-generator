@@ -1,0 +1,40 @@
+form {
+  margin-top: 36px;
+}
+
+.frase1,
+.frase2 {
+  width: 230px;
+  /* border: none; */
+  border: 1px solid #D5D4D8;
+  height: 35px;
+  padding: 10px;
+  color: #0D0D0D;
+}
+
+.frase1,
+.frase2,
+.btn {
+  border-radius: 5px;
+}
+
+.text-input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.1em;
+  color: #FFFFFF;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  cursor: pointer;
+}
