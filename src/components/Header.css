@@ -20,7 +20,7 @@ header {
   margin-right: auto;
 }
 
-header > h2 {
+.header-project {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
