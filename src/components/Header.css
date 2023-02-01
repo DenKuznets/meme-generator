@@ -26,3 +26,14 @@ header {
   line-height: 15px;
   text-align: right;
 }
+
+.memeImg-container {
+  width: 100%;
+  /* outline: 1px solid black; */
+}
+
+.memeImg {
+  margin: auto;
+  /* outline: 1px solid red; */
+  
+}
