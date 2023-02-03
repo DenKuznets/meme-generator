@@ -9,18 +9,27 @@ export default function Meme() {
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
   const [allMemeImages, setAllMemeImages] = useState(memesData);
+  
 
   function handleClick() {
     let item =
       allMemeImages.data.memes[
         Math.floor(Math.random() * allMemeImages.data.memes.length)
       ].url;
-    setMeme(prev => { 
+    setMeme((prev) => {
       return {
         ...prev,
         randomImage: item,
-      }
+      };
     });
+  }
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setMeme(prev => ({
+      ...prev,
+      [name]: value,
+    }))
   }
 
   return (
@@ -30,14 +39,18 @@ export default function Meme() {
           <input
             className="frase1"
             type="text"
-            name="frase1"
+            name="topText"
             placeholder="Shut up"
+            onChange={handleChange}
+            value={meme.topText}
           />
           <input
             className="frase2"
             type="text"
-            name="frase2"
+            name="bottomText"
             placeholder="and take my money"
+            onChange={handleChange}
+            value={meme.bottomText}
           />
         </div>
         <input
@@ -49,6 +62,8 @@ export default function Meme() {
       </div>
       <div className="memeImg-container">
         <img className="memeImg" src={meme.randomImage} alt="" />
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
     </div>
   );
