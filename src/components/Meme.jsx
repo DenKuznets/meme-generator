@@ -8,18 +8,21 @@ export default function Meme() {
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
+  const [allMemes, setAllMemes] = useState(memesData);
   
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then(data => data.json())
-      .then(data => console.log(data.data.memes));
+      .then(data => {
+        console.log(data.data.memes);
+        setAllMemes(data.data.memes);
+      });
   }, [])
 
   function handleClick() {
     let item =
-      allMemeImages.data.memes[
-        Math.floor(Math.random() * allMemeImages.data.memes.length)
+      allMemes.data.memes[
+        Math.floor(Math.random() * allMemes.data.memes.length)
       ].url;
     setMeme((prev) => {
       return {
