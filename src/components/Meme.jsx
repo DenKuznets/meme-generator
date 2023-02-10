@@ -1,6 +1,6 @@
 import "./Meme.css";
 import memesData from "../../memesData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Meme() {
   const [meme, setMeme] = useState({
@@ -10,6 +10,11 @@ export default function Meme() {
   });
   const [allMemeImages, setAllMemeImages] = useState(memesData);
   
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then(data => data.json())
+      .then(data => console.log(data.data.memes));
+  }, [])
 
   function handleClick() {
     let item =
